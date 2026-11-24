@@ -32,7 +32,8 @@ if (!existsSync(source)) {
   throw new Error('entry.png is missing beside main.ts; nothing to submit');
 }
 
-// The grader writes to /output; local runs override it through the env var.
+// The grader writes to /output; local runs override it through the env var,
+// which keeps the same program usable both in the sandbox and on a laptop.
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 const target = join(outputDir, 'entry.png');
 
